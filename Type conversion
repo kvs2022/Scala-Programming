@@ -1,0 +1,42 @@
+object GFG {
+  def main(args: Array[String]) {
+    val demo = new Demo()
+    demo.execute()
+  }
+}
+
+class Demo {
+  // Function to display name, value, and class-name of a variable
+  def display[A](y: String, x: A) {
+    println(y + " = " + x + " is of type " + x.getClass.getName)
+  }
+
+  def execute() {
+    println("Enter the values in the StdIn ")
+    var i: Int = scala.io.StdIn.readInt()
+    var f: Float = scala.io.StdIn.readFloat()
+    var d: Double = scala.io.StdIn.readDouble()
+    var c: Char = scala.io.StdIn.readChar()
+    
+    display("i", i)
+    display("f", f)
+    display("d", d)
+    display("c", c)
+
+
+    var i1 = i.asInstanceOf[Char] //Casting
+    var f1 = f.asInstanceOf[Double] //Casting
+    var d1 = d.asInstanceOf[Float] //Casting
+    var c1 = c.asInstanceOf[Int] //Casting
+
+    display("i1", i1)
+    display("f1", f1)
+    display("d1", d1)
+    display("c1", c1)
+    println("ASCII value of the input is", i1.toInt)
+    println("ASCII value of the input is", f1.toInt)
+    println("ASCII value of the input is", d1.toInt)
+    println("ASCII value of the input is", c1.toInt)
+    
+  }
+}
